@@ -164,7 +164,7 @@ app.delete("/recados/:id", function (requisicao, resposta){
 });
 
 app.listen(porta,  ( ) => {
-   console.log('A aplicação está rodando na porta 3000: http://localhost:3000 ');
+   console.log('A aplicação está rodando na porta 3000: https://api-recados-wxkg.onrender.com ');
 });
 
 
