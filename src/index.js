@@ -5,7 +5,18 @@ import express from "express";
 const usuarios = [];
 let contadorUsuarios = 0;
 
-const recados = [];
+const recados = [{titulo: "teste1",
+descricao: "Boa noite growdever",
+identificador: 0,
+},
+{titulo: "teste2",
+descricao: "Boa tarde growdever",
+identificador: 1,
+},
+{titulo: "teste3",
+descricao: "Bom dia growdever",
+identificador: 2,
+}];
 let contadorRecados = 0;
 
 const app = express();
