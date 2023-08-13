@@ -102,7 +102,21 @@ app.post("/recados", function (requisicao, resposta){
 });
 
 app.get("/recados", function (requisicao, resposta) {
+   const page = requisicao.query.page;
+   if(page < 1){
+      return resposta.status(400).send('Página inválida')
+   }
 
+   const recadosPorPagina = 5;
+   const maxPage = Math.cell(recados.length/recadosPorPagina);
+   if(page > maxPage){
+      return resposta.status(400).send('Página Inválida');
+   }
+
+   const messages = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
+
+
+   
    resposta.json({
       quantidade: recados.length,
       recados: recados,
