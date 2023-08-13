@@ -116,10 +116,10 @@ app.get("/recados", function (requisicao, resposta) {
    const messages = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
 
 
-   
+
    resposta.json({
       quantidade: recados.length,
-      recados: recados,
+      recados: messages,
    });
 });
 
