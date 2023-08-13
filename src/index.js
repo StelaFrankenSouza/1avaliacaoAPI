@@ -2,7 +2,12 @@ import express from "express";
 
 //lista de usuários
 //cada item é um objeto
-const usuarios = [];
+const usuarios = [
+   {nome: "teste",
+   email: "teste@teste.com",
+   senha: "12345",
+   }
+];
 let contadorUsuarios = 0;
 
 const recados = [{titulo: "teste1",
