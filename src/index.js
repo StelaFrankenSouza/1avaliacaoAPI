@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 //lista de usuários
 //cada item é um objeto
@@ -26,6 +27,7 @@ let contadorRecados = 0;
 
 const app = express();
 app.use(express.json())
+app.use(cors());
 const porta = 3000;
 
 app.post('/cadastroUsuario', function (requisicao, resposta) {
