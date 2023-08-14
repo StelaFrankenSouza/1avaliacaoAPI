@@ -23,6 +23,7 @@ identificador: 1,
 descricao: "Bom dia growdever",
 identificador: 2,
 }];
+
 let contadorRecados = 0;
 
 const app = express();
@@ -120,13 +121,13 @@ app.get("/recados", function (requisicao, resposta) {
       return resposta.status(400).send('Página Inválida');
    }
 
-   const messages = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
+   const message = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
 
 
 
    resposta.json({
       quantidade: recados.length,
-      recados: messages,
+      recados: message,
    });
 });
 
