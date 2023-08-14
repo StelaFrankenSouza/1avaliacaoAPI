@@ -121,13 +121,13 @@ app.get("/recados", function (requisicao, resposta) {
       return resposta.status(400).send('Página Inválida');
    }
 
-   const message = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
+   const messages = recados.slice((page-1)*recadosPorPagina, page*recadosPorPagina);
 
 
 
    resposta.json({
       quantidade: recados.length,
-      recados: message,
+      recados: messages,
    });
 });
 
@@ -150,7 +150,7 @@ app.get("/recados/:id", function (requisicao, resposta){
 app.put("/recados/:id", function(requisicao, resposta){
    const recado = !requisicao.body.titulo || !requisicao.body.descricao;
    const id = parseInt(requisicao.params.id);
-   const recadoEncontrado =recados.find(function (recado){
+   const recadoEncontrado = recados.find(function (recado){
       return recado.identificador === id;
    });
    if(recado){
