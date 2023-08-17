@@ -33,9 +33,6 @@ const porta = 3000;
 
 app.post('/cadastroUsuario', function (requisicao, resposta) {
  
-  
-
-
    const bodyInvalido = 
    !requisicao.body.nome || !requisicao.body.senha || !requisicao.body.email;
    
